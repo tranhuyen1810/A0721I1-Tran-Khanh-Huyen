@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung sung chuyen doi tien te</title>
+</head>
+<body>
+<form>
+    <span>Amount</span><span style="margin-left: 190px">From Currency</span><span style="margin-left: 80px">To Currency</span> <br/>
+    <input id="amount" type="text"/>
+    <select id="from" style="margin-left: 50px;width: 120px">
+        <option>VND</option>
+        <option>USD</option>
+    </select>
+    <select id="to" style="margin-left: 50px;width: 120px">
+        <option>USD</option>
+        <option>VND</option>
+    </select>
+    <!--        <input type="button" onclick="myfunction()"Convert/>-->
+    <button style="margin-left: 20px" type="button" onclick="myfunction()"> Convert</button>
+    <p style="color: blue">Result:<span id="result"></span></p>
+    <script>
+        function myfunction() {
+            let money = document.getElementById('result');
+            money.innerHTML="";
+            let amount = document.getElementById('amount').value;
+            let from = document.getElementById('from').value;
+            let to = document.getElementById('to').value;
+
+            if (from ==='VND'&& to==='USD') {
+                money.innerHTML = money.innerHTML + amount / 23000;
+            }
+            else if (from ==='USD'&& to==='VND'){
+                money.innerHTML = money.innerHTML + amount*23000;
+            }
+            else {
+                money.innerHTML = money.innerHTML + amount
+            }
+        }
+    </script>
+</form>
+</body>
+</html>

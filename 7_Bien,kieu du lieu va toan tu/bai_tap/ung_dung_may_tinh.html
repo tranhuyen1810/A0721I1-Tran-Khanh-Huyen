@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Ung dung may tinh</title>
+</head>
+<body>
+    <form>
+        <h2>Caculator</h2>
+        <input id = "numberOne" type = "text" />
+        <input id = "numberTwo" type = "text" style "margin- bottom: 10px"/><br/>
+        <button type = "button" onclick = "myfunctionOne()">Addition (+)</button>
+        <button type = "button" onclick = "myfunctionTwo()">Subtraction (-)</button>
+        <button type = "button" onclick = "myfunctionThree()">Multiplication (x)</button>
+        <button type = "button" onclick = "myfunctionFour()">Division (/)</button>
+        <p id = "result" ></p>
+        <script>
+            function myfunctionOne(){
+                let a = parseFloat(document.getElementById("numberOne").value);
+                let b = parseFloat(document.getElementById("numberTwo").value);
+                result =  a + b;
+                document.getElementById('result').innerHTML = "Result:" + result;
+            } function myfunctionTwo(){
+                let a = parseFloat(document.getElementById("numberOne").value);
+                let b = parseFloat(document.getElementById("numberTwo").value);
+                result =  a - b
+            }function myfunctionThree(){
+                let a = parseFloat(document.getElementById("numberOne").value);
+                let b = parseFloat(document.getElementById("numberTwo").value);
+                result = a * b;
+            }function myfunctionFour(){
+                let a = parseFloat(document.getElementById("numberOne").value);
+                let b = parseFloat(document.getElementById("numberTwo").value);
+                result = a / b;
+                document.getElementById("result").innerHTML="Result:" + result;
+            }
+        </script>
+    </form>
+</body>
+</html>
