@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuc hanh cau truc if_ else_if</title>
+</head>
+<body>
+<script>
+    let userName = prompt("Who's there?");
+    if (userName == "Admin"){
+        let pass = prompt("Passwword?")
+            if (pass == "TheMaster"){
+                alert("Wellcome!!")
+            }else if (pass == null) {
+                alert("Canceled");
+            }else{
+                alert("Wrong passwword");
+            }
+    }else if (userName == null){
+        alert("Canceled");
+    }else{
+        alert("I don't know you");
+    }
+</script>
+
+</body>
+</html>
