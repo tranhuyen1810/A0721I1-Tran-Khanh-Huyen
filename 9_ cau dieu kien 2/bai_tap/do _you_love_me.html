@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do you love</title>
+</head>
+<body style = "heigh: 80%; width: 100%">
+    <form>
+        <form>
+            <h2 style="position:absolute;left: 200px;top:170px">Do you love me?</h2>
+            <input type="button" value="YES" onclick="yesclick()" style="position:absolute;left: 200px;top:235px"/>
+            <input type="button" value="NO" id="NO" onmouseover="noclick()" style="position:absolute;left: 250px;top: 235px"/>
+        </form>
+        <script>
+            function yesclick() {
+                alert("<3")
+            }
+            function noclick() {
+                let h=Math.round(Math.random()*window.innerHeight);
+                let w=Math.round(Math.random()*window.innerWidth);
+                let noElement= document.getElementById('NO');
+                noElement.style.left=w +'px';
+                noElement.style.top=h +'px';
+                // noElement.style.left= parseInt(noElement.style.left)+10+'px';
+                // noElement.style.top= parseInt(noElement.style.top)+10+'px';
+            }
+        </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>may_tinh-don_gian</title>
+</head>
+<style>
+    button{
+        width: 60px;height:60px;margin-top: 20px;margin-left: 20px;color: blue;font-size: 30px;
+    }
+</style>
+<body>
+    <form>
+        <input style="width: 300px;height: 50px;margin-left: 20px" type="text" id="result"/><br/>
+        <button type="button" onclick="show('1')">1</button>
+        <button type="button" onclick="show('2')">2</button>
+        <button type="button" onclick="show('3')">3</button>
+        <button type="button" onclick="show('+')">+</button> <br/>
+        <button type="button" onclick="show('4')">4</button>
+        <button type="button" onclick="show('5')">5</button>
+        <button type="button" onclick="show('6')">6</button>
+        <button type="button" onclick="show('-')">-</button> <br/>
+        <button type="button" onclick="show('7')">7</button>
+        <button type="button" onclick="show('8')">8</button>
+        <button type="button" onclick="show('9')">9</button>
+        <button type="button" onclick="show('×')">×</button> <br/>
+        <button type="button" onclick="Del()">C</button>
+        <button type="button" onclick="show('0')">0</button>
+        <button type="button" onclick="Equal()">=</button>
+        <button type="button" onclick="show('/')">/</button> <br/>
+    </form>
+<script>
+    let result=document.getElementById('result');
+    function show(input) {
+        result.value=result.value+input;
+    }
+    function Del() {
+        result.value="";
+    }
+    function Equal() {
+        let newResult=result.value.replaceAll('×','*');
+        result.value=eval(newResult)
+    }
+</script>
+</body>
+</html>

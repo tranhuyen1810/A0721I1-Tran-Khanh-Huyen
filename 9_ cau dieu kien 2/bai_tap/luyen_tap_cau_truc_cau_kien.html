@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyen_tap_cau_truc_cau_dieu_kien_loai_1</title>
+</head>
+<body>
+form>
+<h3>Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</h3>
+<button type="button" onclick="taskOne()" >Start</button>
+</form>
+<form>
+    <h3>Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</h3>
+    <button type="button" onclick="taskTwo()" >Start</button>
+</form>
+<form>
+    <h3>Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</h3>
+    <button type="button" onclick="taskThree()" >Start</button>
+</form>
+<form>
+    <h3>Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h3>
+    <button type="button" onclick="taskFour()" >Start</button>
+</form>
+<form>
+    <h3>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h3>
+    <button type="button" onclick="taskFive()" >Start</button>
+</form>
+<form>
+    <h3>Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h3>
+    <button type="button" onclick="taskSix()" >Start</button>
+    <p id="commission"></p>
+</form>
+<form>
+    <h3>Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</h3>
+    <button type="button" onclick="taskSeven()" >Start</button>
+    <p id=money></p>
+</form>
+<script>
+    function taskOne() {
+        let a=parseInt(prompt('input a'));
+        let b=parseInt(prompt('input b'));
+        if(a % b == 0){
+            alert('a chia het cho b');
+        }else {
+            alert('a khong chia het cho b')
+        }
+    }
+    function taskTwo() {
+        let age=parseInt(prompt('input Age'));
+        if (age<0){
+            alert('vui long nhap so tuoi')
+        } else if (age>=15){
+            alert('du dieu kien vao hoc lop 10')
+        }else {
+            alert('khong du dieu kien vao hoc lop 10')
+        }
+    }
+    function taskThree() {
+        let int=parseInt(prompt('input Number'));
+        if (int>0){
+            alert('so nguyen lon hon 0')
+        } else if (int<0){
+            alert('so nguyen nho hon 0')
+        } else {
+            alert('so nguyen da nhap la so 0')
+        }
+    }
+    function taskFour() {
+        let a=parseInt(prompt('input NumberOne'));
+        let b=parseInt(prompt('input NumberTwo'));
+        let c=parseInt(prompt('input NumberThree'));
+        if(a>b&&a>c){
+            alert('max la a')
+        }else if(b>a&&b>c){
+            alert('max la b')
+        }else {
+            alert('max la c')
+        }
+    }
+    function taskFive() {
+        let diemKiemTra = parseFloat(prompt('input DiemKiemTra'));
+        let diemGiuaKy = parseFloat(prompt('input DiemGiuaKy'));
+        let diemCuoiKy = parseFloat(prompt('input DiemCuoiKy'));
+        let avg = (diemKiemTra + diemGiuaKy + diemCuoiKy) / 3;
+        if (8.5 <= avg) {
+            alert('Very Good')
+        } else if (7.0 <= avg) {
+            alert('Good')
+        } else if (5.5 <= avg) {
+            alert('Average')
+        } else if (4 <= avg) {
+            alert('Below Average')
+        } else {
+            alert('Weak')
+        }
+    }
+    function taskSix() {
+        let revenue=parseFloat(prompt('input Revenue'));
+        if(revenue<50000000){
+            document.getElementById('commission').innerHTML="Commission: "+ revenue*(2/100);
+        }else if (revenue<100000000){
+            document.getElementById('commission').innerHTML="Commission: "+ revenue*(3/100);
+        }else{
+            document.getElementById('commission').innerHTML="Commission: "+ revenue*(5/100);
+        }
+    }
+    function taskSeven() {
+        let minutes=parseFloat(prompt('input minutes'));
+        if (minutes<30){
+            document.getElementById('money').innerHTML="Money: "+ minutes*2000;
+        }else if(minutes<60){
+            document.getElementById('money').innerHTML="Money: "+ minutes*1700;
+        }else {
+            document.getElementById('money').innerHTML="Money: "+ minutes*1500;
+        }
+    }
+</script>
+</body>
+</html>
