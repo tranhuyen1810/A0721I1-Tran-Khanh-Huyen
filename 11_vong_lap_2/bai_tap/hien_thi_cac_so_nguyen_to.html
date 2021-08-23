@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hien_thi_cac_so_nguyen_to</title>
+</head>
+<body>
+    <script>
+        var i = parseInt(prompt("Enter a number: "));
+        var count = 0;
+        var N = 2;
+        while (count < i) {
+            let check = true;
+            for (let i = 2; i < N; i++) {
+                if (N % i == 0) {
+                    check = false;
+                    break;
+                }
+            }
+            if (check) {
+                count++;
+                document.write(N+' ');
+            }
+            N++;
+        }
+    </script>
+
+</body>
+</html>

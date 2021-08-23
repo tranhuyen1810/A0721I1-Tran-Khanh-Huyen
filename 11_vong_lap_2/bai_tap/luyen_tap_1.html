@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyen tap 1</title>
+</head>
+<body>
+<form>
+    <h3>Bài 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.</h3>
+    <button type="button" onclick="taskOne()">Start</button>
+    <p id="result1"></p>
+    <h3>Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ. Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.</h3>
+    <button type="button" onclick="taskTwo()">Start</button>
+    <p id="result2"></p>
+    <h3>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.</h3>
+    <button type="button" onclick="taskThree()">Start</button>
+    <p id="result3"></p>
+    <h3>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</h3>
+    <button type="button" onclick="taskFour()">Start</button>
+    <p id="result4"></p>
+    <h3>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h3>
+    <button type="button" onclick="taskFive()">Start</button>
+    <p id="result5"></p>
+    <h3>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h3>
+    <button type="button" onclick="taskSix()">Start</button>
+    <p id="result6"></p>
+    <h3>Bài 7: Hãy viết một chương trình in ra các số từ 1 đến 100. Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó. Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".</h3>
+    <button type="button" onclick="taskSeven()">Start</button>
+    <p id="result7"></p>
+    <h3>Bài 8: Game đoán số</h3>
+    <button type="button" onclick="taskEight()">Start</button>
+</form>
+<script>
+    function taskOne() {
+        for(let i=1;i<=100;i++){
+            if(i==3){
+                alert('da hoan thanh')
+            }
+        }
+    }
+
+    function taskTwo() {
+        let nhietDo=parseFloat(prompt('Input nhiet do'));
+        if(nhietDo>100){
+            alert('Hay giam nhiet do');
+        }else if (nhietDo<20){
+            alert('Hay tang nhiet do')
+        }else {
+            while (nhietDo>100||nhietDo<20||isNaN(nhietDo)){
+                alert('Hay nhap nhiet do hien tai');
+                nhietDo=parseFloat(prompt('Ipput nhiet do hien tai'))
+            }
+            document.getElementById('result2').innerHTML='nhiet do hien tai la: '+nhietDo;
+        }
+    }
+    function taskThree() {
+        let a=0;
+        let b=1;
+        let c=0;
+        let i=0;
+        let e=document.getElementById('result3');
+        e.innerHTML=a+'; ';
+        while(i<19){
+            c=a+b;
+            a=b;
+            b=c;
+            i++;
+            e.innerHTML=e.innerHTML+a+'; ';
+        }
+    }
+
+    function taskFour() {
+        let a=0;
+        let b=1;
+        let c=0;
+        let i=0;
+        while(i>=0){
+            c=a+b;
+            a=b;
+            b=c;
+            i++;
+            if(c%5==0){
+                document.getElementById('result4').innerHTML= 'Số đầu tiên trong dãy fibonacci chia hết cho 5 là: ' + c;
+                break;
+            }
+        }
+    }
+
+    function taskFive() {
+        let a=0;
+        let b=1;
+        let c=0;
+        let i=0;
+        let sum=a;
+        while (i<19){
+            c=a+b;
+            a=b;
+            b=c;
+            i++;
+            sum=sum+a;
+        }
+        document.getElementById('result5').innerHTML='Tổng của 20 số đầu tiên trong dãy fibonacci là: '+sum;
+    }
+
+    function taskSix() {
+        let counter=0;
+        let i=1;
+        let sum=0;
+        while (i>=1){
+            if(i%7==0){
+                counter++;
+                sum=sum+i;
+            }
+            if(counter>30){
+                break;
+            }
+            i++;
+        }
+        document.getElementById('result6').innerHTML=sum;
+        // let counter=0;
+        // let i=0;
+        // let sum=0;
+        // let a=0;
+        // while (i>=0){
+        //     a=a+1;
+        //     if(a%7==0){
+        //         counter++;
+        //         sum=sum+a;
+        //     }
+        //     if(counter>30){
+        //         break;
+        //     }
+        // }
+        // document.getElementById('result6').innerHTML=sum;
+    }
+    function taskSeven() {
+        // let e=document.getElementById('result7');
+        // let a=1;
+        // for(let i=1;i<=100;i++) {
+        //     if(i%3==0&&i%5==0){
+        //         a='FizzBuzz';
+        //     }else if(i%5==0){
+        //         a='Buzz';
+        //     }else if(i%3==0){
+        //         a= 'Fizz';
+        //     }else {
+        //         a=i;
+        //     }
+        //     e.innerHTML=e.innerHTML+a+', ';
+        // }
+
+        let e=document.getElementById('result7');
+        for(let i=1;i<=100;i++){
+            let a='';
+            if(i%3==0){
+                a=a+'Fizz';
+            }
+            if(i%5==0){
+                a=a+'Buzz';
+            }
+            if(a==''){
+                a=i;
+            }
+            e.innerHTML=e.innerHTML+a+', ';
+        }
+    }
+</script>
+
+</body>
+</html>
