@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>su dung vong lap long</title>
+</head>
+<body>
+    <script language="javascript">
+        let show, i, j;
+        show = "<table border='1' width='300' cellspacing='0' cellpadding='3'>";
+        i = j = 1;
+        while(i<=10){
+            show=show+"<tr>";
+            while (j<=10){
+                show=show+"<td>"+i*j+"</td>";
+                j++;
+            }
+            show=show+"</tr>";
+            j=1;
+            i++
+        }
+        show=show+"</table>";
+        document.write(show);
+    </script>
+
+</body>
+</html>
