@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen_tap_mang_02</title>
+</head>
+<body>
+<button type="button" onclick="taskOne()">Bai 1</button>
+<button type="button" onclick="taskTwo()">Bai 2</button>
+<button type="button" onclick="taskThree()">Bai 3</button>
+<button type="button" onclick="taskFour()">Bai 4</button>
+<button type="button" onclick="taskFive()">Bai 5</button>
+<button type="button" onclick="taskSix()">Bai 6</button>
+
+<script>
+    function taskOne() {
+        let a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+        // a[0]=[1, 2, 1, 24];
+        // a[1]=[8, 11, 9, 4];
+        // a[2]=[7, 0, 7, 27];
+        // a[3]=[7, 4, 28, 14];
+        // a[4]=[3, 10, 26, 7];
+        for (let i in a) {
+            document.write("row " + i +'<br>');
+            for (let j in a[i]) {
+                document.write(" " + a[i][j] + '<br>');
+            }
+        }
+    }
+
+    function taskTwo() {
+        let arrayPrint=[2,9,6,8,"N",'E','Y',"U",'H'];
+        let newArray;
+        newArray=arrayPrint.reverse();
+        document.write('Mang sau khi dao nguoc la: '+ newArray)
+    }
+
+
+    function taskThree() {
+        let kyTuArray=new Array(10);
+        let numberArray=[];
+        let notNumberArray=[];
+        for(let i=0;i<10;i++){
+            let input=prompt('Nhap ky tu ban muon:');
+            kyTuArray[i]=input;
+            if(isNaN(kyTuArray[i])){
+                notNumberArray.push(kyTuArray[i]);
+            }else {
+                numberArray.push(kyTuArray[i]);
+            }
+        }
+        document.write('Do dai cua mang la: '+kyTuArray.length+'<br>'+ 'Mang chua cac ky tu so la: '+ numberArray)
+    }
+
+
+    function taskFour() {
+        let chuoi=prompt('Nhap chuoi can dem so tu cach nhau bang dau cach');
+        let counter;
+        counter=chuoi.split(" ").length;
+        document.write('Do dai cua chuoi la: '+counter)
+    }
+
+
+    function taskFive() {
+        let chuoia=new Array(10);
+        let chuoib=new Array(10);
+        let check;
+        for(let i=1;i<=10;i++){
+            let anum=prompt('Nhap phan tu thu '+i+' cua chuoi a');
+            let bnum=prompt('Nhap phan tu thu '+i+' cua chuoi b');
+            chuoia[i]=anum;
+            chuoib[i]=bnum;
+            if(chuoia[i]===chuoib[i]){
+                check=true;
+            }
+        }
+        if(check){
+            document.write('Chuoi a va chuoi b giong nhau')
+        }else {
+            document.write('Chuoi a va chuoi b khac nhau')
+        }
+    }
+
+    function taskSix() {
+        let kyTuArray=new Array(10);
+        for(let i=0;i<10;i++) {
+            let kyTu = prompt('Nhap mang ky tu can tim');
+            kyTuArray[i] = kyTu;
+            if (kyTuArray[i] === "-") {
+                kyTuArray[i]='_'
+            }
+        }
+        document.write('Mang ky tu moi sau khi thay the:'+ kyTuArray)
+
+
+        //     let kyTu = prompt('Nhap mang ky tu cach nhau bang dau ",": ');
+        //     let newArray= kyTu.split("");
+        //     for(let i=0;i<newArray.length;i++){
+        //     if (newArray[i] === "-") {
+        //         newArray[i]='_'
+        //     }
+        // }
+        // document.write('Mang ky tu moi sau khi thay the: '+ newArray)
+    }
+</script>
+</body>
+</html>

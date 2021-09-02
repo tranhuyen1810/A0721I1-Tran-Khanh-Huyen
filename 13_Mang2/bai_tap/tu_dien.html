@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+<script>
+    let english=['yellow','orange','red','violet','pink','blue','white','black'];
+    let vietnamiese=['vàng','cam','đỏ','tím','hồng','xanh da trời','trắng','đen'];
+    let input =prompt('Nhap tu tieng Anh can tim');
+    if(english.indexOf(input)!=-1){
+        document.write(input+':'+vietnamiese[english.indexOf(input)])
+    } else {
+        document.write('Khong co trong tu dien')
+    }
+</script>
+
+</body>
+</html>

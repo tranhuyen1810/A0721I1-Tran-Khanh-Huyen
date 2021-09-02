@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyen_tap_mang_01</title>
+</head>
+<body>
+<h3>Bài 1: Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</h3>
+<button type="button" onclick="taskOne()">Start</button>
+<h3>Bài 2: Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.</h3>
+<button type="button" onclick="taskTwo()">Start</button>
+<h3>Bài 3: Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.</h3>
+<button type="button" onclick="taskThree()">Start</button></p>
+<h3>Bài 4: Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</h3>
+<button type="button" onclick="taskFour()">Start</button>
+<h3>Bài 5: Viết chương trình đếm số nguyên âm trong một chuỗi</h3>
+<button type="button" onclick="taskFive()">Start</button>
+<h3>Bài 6: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</h3>
+<button type="button" onclick="taskSix()">Start</button>
+<h3>Bài 7: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)</h3>
+<button type="button" onclick="taskSeven()">Start</button>
+<h3>Bài 8: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</h3>
+<button type="button" onclick="taskEight()">Start</button>
+<h3>Bài 9: Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</h3>
+<button type="button" onclick="taskNine()">Start</button>
+
+<script>
+    function taskOne() {
+        let number=[10,12,8,3,6,54,67,86,29,9];
+        let show=[];
+        for(let i=0;i<number.length;i++){
+            if(number[i]>=10){
+                show.push(number[i]);
+            }
+        }
+        document.write(show.join(', '));
+    }
+    function taskTwo() {
+        let number=[24,34,454,42,654,74,35,24,74,12];
+        let max=number[0];
+        let index=0;
+        for(let i=0;i<number.length;i++){
+            if(number[i]>max){
+                max=number[i];
+                index=i;
+            }
+        }
+        document.write('Max la: '+max+'  Vi tri: '+index);
+    }
+    function taskThree() {
+        let arrayNumber=[24,55,765,876,36,2336,256,7,42,15,567,26,2664,64,46,456,25,255,2674,868];
+        let max=arrayNumber[0];
+        let avg=0;
+        for(let i=0;i<arrayNumber.length;i++){
+            if(arrayNumber[i]>max){
+                max=arrayNumber[i];
+                avg=(avg+arrayNumber[i])/i;
+            }
+        }
+        document.write('Max la: '+ max +'<br>'+ 'Avg: '+avg);
+    }
+    function taskFour() {
+        let arrayNumber=new Array(10);
+        for(let i=0;i<10;i++){
+            arrayNumber[i]=new Array(10);
+            let number=parseInt(prompt('Nhap cac gia tri so nguyen cua mang'));
+            arrayNumber[i]=number;
+        }
+        arrayNumber.reverse();
+        document.write(arrayNumber);
+    }
+    function taskFive() {
+        let arrayNumber=[-3,55,-765,876,-36,-2336,256,7,-42,15,567,-26,2664,-64,-46,456,-25,-255,-2674,868,-3,-63,-76];
+        let soNguyenAm=[];
+        for(let i=0;i<arrayNumber.length;i++){
+            if(arrayNumber[i]<0){
+                soNguyenAm.push(arrayNumber[i]);
+            }
+        }
+        document.write('So luong so nguyen am trong chuoi la: '+ soNguyenAm.length)
+    }
+    function taskSix() {
+        let arrayNumber = new Array(10);
+        let check='';
+        let soNguyenV = parseInt(prompt('Nhap so nguyen V can kiem tra: '));
+        for (let i = 0; i < 10; i++) {
+            // arrayNumber[i] = new Array(10);
+            let number = parseInt(prompt('Nhap cac gia tri so nguyen cua mang'));
+            arrayNumber[i] = number;
+            if (soNguyenV === arrayNumber[i]){
+                check=true;
+            }
+        }
+        if (check) {
+            document.write("V is in the array");
+        } else {
+            document.write("V is not in the array")
+        }
+
+    }
+    function taskSeven() {
+        let arrayNumber = new Array(10);
+        let arrayNew = [];
+        let soNguyenV = parseInt(prompt('nhap so nguyen V'));
+        for (let i = 1; i <= 10; i++) {
+            // arrayNumber[i] = new Array(10);
+            let number = parseInt(prompt('Nhap cac gia tri so nguyen cua mang'));
+            arrayNumber[i] = number;
+            if (arrayNumber[i] === soNguyenV) {
+                document.write('V is in the array'+'<br/>')
+            } else {
+                arrayNew.push(arrayNumber[i]);
+            }
+        }
+        document.write('New Array: '+ arrayNew.join(','))
+    }
+
+    let arrayNum=new Array(10);
+    let neuArray=[];
+    function taskEight() {
+        for(let i=0;i<=10;i++){
+            let num=parseInt(prompt('Nhap 10 phan tu so nguyen cua chuoi'));
+            arrayNum[i]=num;
+            arrayNum.sort(function (a,b) {return b-a});
+            neuArray=arrayNum;
+        }
+        document.write('Mang da duoc sap xem thư tư giảm dan: '+neuArray);
+    }
+
+    let aNumber=new Array(10);
+    let bNumber=new Array(10);
+    let cNumber=[];
+    function taskNine() {
+        for(let i=1;i<=10;i++){
+            let anum=parseInt(prompt('Nhap phan tu thu '+i+' cua so nguyen cua chuoi a'));
+            let bnum=parseInt(prompt('Nhap phan tu thu '+i+' cua so nguyen cua chuoi b'));
+            aNumber[i]=anum;
+            cNumber.push(aNumber[i]);
+            bNumber[i]=bnum;
+            cNumber.push(bNumber[i]);
+            // cNumber=aNumber.concat(bNumber);
+        }
+        document.write('Mang c la: '+ cNumber)
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>su dung cac ham co san trong mang</title>
+</head>
+<body>
+<div>
+    <button type="button" onclick="taskOne();">Bài 1</button>
+    <span>Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau.</span>
+</div> <br/>
+<div>
+    <button type="button" onclick="taskTwo();">Bài 2</button>
+    <span>Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. </span>
+</div> <br/>
+<div>
+    <button type="button" onclick="taskThree();">Bài 3</button>
+    <span>Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.</span>
+</div>
+<script>
+    let myColor=["Red", "Green", "White", "Black"];
+    function taskOne() {
+        document.write(myColor.join(', ')+'<br/>');
+        document.write(myColor.toString()+'<br/>');
+        document.write(myColor.join('; '));
+    }
+
+    let num=parseInt(prompt('Nhap so'));
+    let arrayNum=num.toString();
+    let result=[arrayNum[0]];
+    function taskTwo() {
+        for(let i=1;i<arrayNum.length;i++){
+            if((arrayNum[i-1]%2===0)&&(arrayNum[i]%2===0)){
+                result.push('-',arrayNum[i])
+            }else {
+                result.push(arrayNum[i])
+            }
+        }
+        document.write(result.join(''));
+    }
+
+    function taskThree() {
+        let str='XinChao123';
+        let inHoa='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let inThuong='abcdefghijklmnopqrstuvwxyz';
+        let result=[];
+        for(let i=0;i<str.length;i++){
+            if(inHoa.indexOf(str[i])!==-1){
+                result.push(str[i].toLowerCase())
+            }else if(inThuong.indexOf(str[i])!==-1){
+                result.push(str[i].toUpperCase())
+            }else {
+                result.push(str[i])
+            }
+        }
+        document.write(result.join(''));
+    }
+</script>
+</body>
+</html>
