@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    // Viết chương trình đếm số nguyên âm trong một chuỗi
+    let str = [-1,-4,-55,-5,-3,-2];
+    let dem = 0;
+
+    document.writeln("Mảng đã tạo là"+"<br>");
+    for(let i = 0;i < str.length; i++)
+        document.writeln(str[i]);
+
+    for(let i = 0;i < str.length; i++)
+        if(str[i] < 0)
+            dem ++;
+
+    document.writeln("<br>"+"Chuỗi có "+ dem + " số nguyên âm");
+</script>
+
+</body>
+</html>

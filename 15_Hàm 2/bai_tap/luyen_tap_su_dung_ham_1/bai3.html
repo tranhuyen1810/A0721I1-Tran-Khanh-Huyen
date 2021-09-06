@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    // Viết chương trình khởi tạo mảng số nguyên.
+    // Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+    let a = [10,-2,20,5,3,6,50,22];
+    document.writeln("Mảng đã tạo là"+"<br>");
+    for(let i = 0 ; i < a.length ; i++)
+        document.writeln(a[i]+" ,");
+    document.writeln("<br>");
+    let index = 0;
+    let max = a[0];
+    for(let i = 0 ; i < a.length ; i++)
+        if(max < a[i]) {
+            max = a[i];
+            index = i;
+        }
+    document.writeln("max = "+ max + " ở vị trí " + index+"<br>");
+    let sum = 0;
+    for(let i = 0 ; i < a.length ; i++)
+        sum += a[i];
+
+    document.writeln("giá trị trung bình = " + (sum/(a.length+1)).toFixed(2));
+</script>
+</body>
+</html>

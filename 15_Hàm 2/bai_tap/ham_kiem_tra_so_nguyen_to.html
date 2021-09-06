@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra so nguyen to</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let check=true;
+        if(number<2){
+            check=false;
+        }else {
+            for(let i=2;i<number-1;i++){
+                if(number%i==0){
+                    check=false;
+                    break;
+                }
+            }
+        }
+        if(check){
+            document.write(number+' la so nguyen to'+'<br/>')
+        }else {
+            document.write(number+' khong phai la so nguyen to'+'<br/>')
+        }
+    }
+    isPrime(8);
+    isPrime(12);
+    isPrime(7);
+    isPrime(9);
+    isPrime(19);
+</script>
+</body>
+</html>

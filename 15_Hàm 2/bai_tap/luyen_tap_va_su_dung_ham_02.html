@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen_tap_su_dung_ham_va_tao_ham_02</title>
+</head>
+<body>
+<span><b>Bài 1:</b> Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</span><br/>
+<span>Number</span><input id="number1" type="number"/>
+<button type="button" onclick="taskOne()">Check</button><br/><br/>
+<span><b>Bài 2:</b> Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được.</span> <br/>
+<span>Radius</span><input id="radius" type="number"/>
+<button type="button" onclick="taskTwo()">Check</button><br/><br/>
+<span><b>Bài 3:</b> Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</span><br/>
+<span>Number</span><input id="number2" type="number"/>
+<button type="button" onclick="taskThree()">Check</button><br/><br/>
+<span><b>Bài 4:</b>> Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</span> <br/>
+<input id="inputNumber"/>
+<button type="button" onclick="checkBai4()">Check</button><br/><br/>
+<span><b>Bài 5:</b> Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</span> <br/>
+<span>Number1</span><input id="firstNumber" type="number"/> <br/>
+<span>Number2</span><input id="secondNumber2" type="number"/><br/>
+<span>Number3</span><input id="thirdNumber" type="number"/><br/>
+<button type="button" onclick="checkBai5()">Check</button> <br/> <br/>
+<span><b>Bài 6:</b> Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.</span> <br/>
+<input id="input"/>
+<button type="button" onclick="checkBai6()">Check</button> <br/> <br/>
+<span><b>Bài 7:</b> Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</span> <br/>
+<span>NumberOne: </span><input id="numberOne" type="number"/> <br/>
+<span>NumberTwo: </span><input id="numberTwo" type="number"/> <br/>
+<button type="button" onclick="checkBai7()">Check</button><br/><br/>
+<span><b>Bài 8:</b> Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</span> <br/>
+<span><i>Nhập mảng số nguyên cách nhau bằng dấu cách vào khung:</i> </span> <br/>
+<input id="arraySoNguyen"/><br/>
+<button type="button" onclick="checkBai8()">Check</button> <br/> <br/>
+<span><b>Bài 9:</b> Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự.</span> <br/>
+<span><i>Nhập mảng ký tự cần kiểm tra (nhập liên tiếp nhau):</i></span>
+<input id="inputMangKyTu"/> <br/>
+<span><i>Nhập ký tự cần kiểm tra:</i></span>
+<input id="inputKyTu"/> <br/>
+<button type="button"  onclick="checkBai9()">Check</button>
+<script>
+    function bai1(num) {
+        square=num*num;
+        return square
+    }
+    function taskOne () {
+        let num=document.getElementById('number1').value;
+        document.write('Binh phuong cua '+num+ ' là: '+ bai1(num) );
+    }
+
+
+
+    function area(radius) {
+        area=radius*radius*Math.PI;
+        return area;
+    }
+    function circum(radius) {
+        circumference=radius*2*Math.PI;
+        return circumference;
+    }
+
+    function taskTwo() {
+        let r=document.getElementById('radius').value;
+        document.write("Dien tich hinh tron: " + area(r) + '<br/>');
+        document.write("Chu vi hinh tron: "+ circum(r));
+    }
+
+
+
+
+    function bai3(num) {
+        let a=1;
+        for(let i=1;i<=num;i++){
+            a=a*i;
+        }
+        return a
+    }
+    function taskThree() {
+        let n=document.getElementById('number2').value;
+        document.write( n + '!= '+bai3(n));
+    }
+
+
+
+
+    function check(n) {
+        let result;
+        if(isNaN(n)){
+            result= "false";
+            return result;
+        }else {
+            result= "true";
+            return  result;
+        }
+    }
+    function checkBai4() {
+        let a = document.getElementById('inputNumber').value;
+        document.write("Ham tra ve: " + check(a) + '<br/>');
+    }
+
+
+
+
+    function checkNumber(a, b, c) {
+        let min;
+        if ( a<b&&a<c) {
+            min = a;
+            return min
+        }else if (b<a&&b<c) {
+            min = b;
+            return min;
+        }else{
+            min=c;
+            return min;
+        }
+    }
+    function checkBai5() {
+        let firstNumber=parseInt(document.getElementById('firstNumber').value);
+        let secondNumber=parseInt(document.getElementById('secondNumber').value);
+        let thirdNumber=parseInt(document.getElementById('thirdNumber').value);
+        document.write('So nguyen co gia tri nho nhat la: '+ checkNumber(firstNumber,secondNumber,thirdNumber))
+    }
+
+
+
+
+    function checkNguyenDuong(number) {
+        let check="";
+        if(number>0){
+            check=true;
+            return check;
+        }else {
+            check=false;
+            return check;
+        }
+    }
+    function checkBai6() {
+        let n=parseInt(document.getElementById('input').value);
+        alert(checkNguyenDuong(n));
+        input.value=""
+    }
+
+
+
+    function swap(a,b) {
+        let temp=a;
+        a=b;
+        b=temp;
+        return a + ', ' +b;
+    }
+    function checkBai7() {
+        let number1=parseInt(document.getElementById('numberOne').value);
+        let number2=parseInt(document.getElementById('numberTwo').value);
+        alert(swap(number1,number2));
+        numberOne.value="";
+        numberTwo.value=""
+    }
+
+
+
+    function checkBai8() {
+        let string=document.getElementById('arraySoNguyen').value;
+        let array=string.split(" ");
+        array.reverse();
+        alert('Mang so nguyen dao nguoc la: '+ array);
+        arraySoNguyen.value=""
+    }
+
+
+
+    function checkBai9() {
+        let string=document.getElementById('inputMangKyTu').value;
+        let array=string.split("");
+        let kyTu=document.getElementById('inputKyTu').value;
+        let counter=0;
+        let checker="";
+        for(let i=0;i<array.length;i++){
+            if(kyTu===array[i]){
+                checker=true;
+                counter+=1;
+            }
+        }
+        if(checker){
+            alert('Số lần xuất hiện của ký tự trong mảng là: '+counter);
+        }
+        else {
+            alert('Ký tự không xuất hiện trong mảng')
+        }
+        inputMangKyTu.value="";
+        inputKyTu.value="";
+    }
+</script>
+</body>
+</html>

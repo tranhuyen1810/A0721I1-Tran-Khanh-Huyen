@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 8</title>
+</head>
+<body>
+<script>
+    // Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    //     Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+    let a = [10,-2,20,5,3,6,50,22,9,11];
+    document.writeln("Mảng đã tạo"+"<br>");
+    for (let i = 0; i < a.length; i++)
+        document.writeln(a[i]);
+    for(let i = 0;i < a.length; i++) {
+        for(let j = i+1;j < a.length; j++)
+            if(a[i] < a[j]) {
+                let temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+    }
+    document.writeln("<br><br>"+"Mảng giảm dần"+"<br>");
+    for (let i = 0; i < a.length; i++)
+        document.writeln(a[i]);
+
+</script>
+</body>
+</html>
