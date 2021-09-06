@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo dien thoai</title>
+</head>
+<body>
+<div>
+    <input type="text" id="samSung"  style="height: 40px;width: 300px;">
+    <input type="button" value="Send" onclick="send('samSung')">
+    <input type="button" value="show" onclick="show('samSung')">
+    <input type="button" value="On/Off" onclick="onOff('samSung')">
+</div>
+<div>
+    <input type="text" id="nokia" style="height: 40px;width: 300px">
+    <input type="button" value="Send" onclick="send('nokia')">
+    <input type="button" value="show" onclick="show('nokia')">
+    <input type="button" value="On/Off" onclick="onOff('nokia')">
+</div>
+<script>
+    class DienThoai {
+        constructor() {
+            this.trangThai="On";
+            this.pin=10;
+            this.tinSoan="";
+            this.tinDaGui="";
+            this.tinNhan="";// tin nhận
+        }
+        batTat(){
+            if(this.trangThai=="On"){
+                this.trangThai ="Off"
+            }else {
+                this.trangThai ="On"
+            }
+        }
+        sac(){
+            this.pin=100;
+        }
+        getTrangThai(){
+            return this.trangThai;
+        }
+        // soạn tin nhắn
+        soanTinNhan(text){
+            this.tinSoan=text;
+            this.pin--;
+        }
+        // nhận tin nhắn
+        nhanTinNhan(text){
+            this.tinNhan= text;
+            this.pin--;
+        }
+        // gửi tin nhăn
+        guiTinNhan(dienThoai, text){
+            this.soanTinNhan(text);
+            this.tinDaGui=this.tinSoan;
+            this.tinSoan="";
+            dienThoai.nhanTinNhan(this.tinDaGui)
+            this.pin--;
+        }
+        hienThiTinNhanDen(){
+            return this.tinNhan;
+        }
+    }
+    let nokia = new DienThoai();
+    let samsung = new DienThoai();
+    function send(dienThoai) {
+        if(dienThoai=="samSung"){
+            let tinNhan=document.getElementById("samSung").value;
+            samsung.guiTinNhan(nokia,tinNhan);
+            document.getElementById("samSung").value="tin của bạn đã gửi";
+            document.getElementById("nokia").value="bạn có tin nhăn mới";
+        }else {
+            let tinNhan=document.getElementById("nokia").value;
+            nokia.guiTinNhan(samsung,tinNhan);
+            document.getElementById("nokia").value="tin của bạn đã gửi";
+            document.getElementById("samSung").value="bạn có tin nhăn mới";
+        }
+    }
+    function show(dienThoai) {
+        if(dienThoai=="samSung"){
+            document.getElementById("samSung").value=samsung.hienThiTinNhanDen();
+        }else {
+            document.getElementById("nokia").value=nokia.hienThiTinNhanDen();
+        }
+    }
+</script>
+
+</body>
+</html>
