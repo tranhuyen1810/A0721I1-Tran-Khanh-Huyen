@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cong_tac_va_bong_den</title>
+</head>
+<body>
+    <script>
+        class SwitchButton{
+            constructor(status) {
+                this.status=status;
+            }
+            connectToLamp(electricLamp){
+                this.lamp=electricLamp;
+            }
+            switchOff(){
+                this.status=false;
+                this.lamp.turnOff()
+            }
+            switchOn(){
+                this.status=true;
+                this.lamp.turnOn();
+            }
+        }
+        class ElectricLamp{
+            constructor(status) {
+                this.status=status;
+            }
+            turnOff() {
+                this.status="khong sang";
+            }
+            turnOn(){
+                this.status="sang";
+            }
+        }
+
+        let electricLamp=new ElectricLamp("khong sang");
+        let switchButton=new SwitchButton(false);
+        switchButton.connectToLamp(electricLamp);
+        let count = 0;
+        while (count < 10) {
+            switchButton.switchOn();
+            document.write(electricLamp.status);
+            switchButton.switchOff();
+            document.write(electricLamp.status+'<br>');
+            count++;
+        }
+    </script>
+</body>
+</html>

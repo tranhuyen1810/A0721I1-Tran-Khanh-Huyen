@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phat_trien_ung_dung_nho_mo_phong_cau_chuyen_Adam_va_Eva</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor(weight) {
+                this.weight=weight;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            deceraseWeight(){
+                if(this.weight>0){
+                    this.weight--
+                }
+            }
+            isEmpty(){
+                if(this.weight===0){
+                    return true
+                }else {
+                    return false
+                }
+            }
+        }
+        class Human{
+            constructor(name,gender,weight) {
+                this.name=name;
+                this.gender=gender;
+                this.weight=weight;
+            }
+            getName(){
+                return this.name;
+            }
+            getGender(){
+                return this.gender;
+            }
+            say(string){
+                alert(string);
+            }
+            eat(Apple){
+                if(Apple.getWeight()>0){
+                    this.weight++;
+                    Apple.deceraseWeight();
+                }else {
+                    alert('Tao da an het')
+                }
+            }
+            getWeight(){
+                return this.weight;
+            }
+            checkApple(){
+                return Apple.getWeight();
+            }
+            isMale(){
+                if(this.gender=='Male'){
+                    return true
+                }else {
+                    return  false
+                }
+            }
+        }
+        let adam=new Human("Adam","Male",50);
+        let eva=new Human("Eva","Female",45);
+        let apple=new Apple(10);
+        adam.say("Hello Eva");
+        eva.say("Hello Adam");
+        adam.eat(apple);
+        eva.eat(apple);
+        document.write("Can nang cua Adam: "+adam.weight+"<br/>");
+        document.write("Can nang cua Eva: "+eva.weight+"<br/>");
+        document.write("Can nang cua apple: "+apple.weight);
+        while (!apple.isEmpty()){
+            adam.eat(apple);
+            eva.eat(apple);
+        }
+
+        console.log("Tao sau khi an: " + apple.getWeight());
+        console.log("Adam sau khi an: " + adam.getWeight());
+        console.log("Eva sau khi an: " + eva.getWeight());
+    </script>
+</body>
+</html>
