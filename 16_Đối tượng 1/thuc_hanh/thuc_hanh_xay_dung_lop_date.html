@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc_hanh_xay_dung_lop_date</title>
+</head>
+<body>
+<script>
+    class myDate{
+        constructor(day,month,year) {
+            this.day=day;
+            this.month=month;
+            this.year=year;
+        }
+        getDay(){
+            return this.day;
+        }
+        getMonth(){
+            return this.month;
+        }
+        getYear(){
+            return this.year;
+        }
+        setDay(newDay){
+            this.day=newDay;
+        }
+        setMonth(newMonth){
+            this.month=newMonth;
+        }
+        setYear(newYear){
+            this.year=newYear;
+        }
+    }
+    let date=new myDate(18,10,2001);
+    let day=date.getDay();
+    let month=date.getMonth();
+    let year = date.getYear();
+    alert(day+'/'+month+'/'+year);
+    date.setDay(8);
+    date.setMonth(8);
+    date.setYear(2007);
+    alert(date.getDay()+'/'+date.getMonth()+'/'+date.getYear())
+</script>
+</body>
+</html>
