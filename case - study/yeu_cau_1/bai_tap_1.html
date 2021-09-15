@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ve _hinh_chu_nhat_rong</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhap chieu dai cua hinh chu nhat"));
+    let  m = parseInt(prompt("Nhap chieu rong cua hinh chu nhat"));
+    for (let i = 1; i <= m; i ++) {
+        for (let j = 1; j <= m; j++) {
+            if (i === 1 || i === m || j === 1 || j === n) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp;");
+            }
+        }
+        document.write("<br/>")
+    }
+
+</script>
+</body>
+</html>
